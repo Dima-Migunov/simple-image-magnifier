@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Magnifier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div className='w-screen h-screen flex justify-center items-center'>
+            <div className='preview-box w-[400px] h-[600px] bg-gray-200 relative overflow-hidden'>
+                <img
+                    src={imagePreview}
+                    alt=''
+                    className='w-full h-full object-cover image-preview transition relative z-10'
+                />
+                <img src={imageOriginal} alt='' className='absolute image-original max-w-none' />
+            </div>
+        </div>
+</body>
+</html>

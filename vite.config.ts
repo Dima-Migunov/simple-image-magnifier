@@ -7,7 +7,10 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
     build: {
         lib: {
-            entry: [resolve(__dirname, 'src/image-magnifier.ts')],
+            entry: [
+                resolve(__dirname, 'src/react-image-magnifier.tsx'),
+                resolve(__dirname, 'src/simple-image-magnifier.ts'),
+            ],
             name: 'simple-image-magnifier',
             fileName: (format, name) => {
                 return format === 'es' ? `${name}.js` : `${name}.${format}`

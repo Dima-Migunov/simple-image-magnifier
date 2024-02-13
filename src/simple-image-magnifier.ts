@@ -1,4 +1,4 @@
-export default function ImageMagnifier(
+export default function SimpleImageMagnifier(
     containerElement: string | HTMLElement,
     imageElement: string | HTMLImageElement,
     imageOriginalElement: string | HTMLImageElement
@@ -6,7 +6,7 @@ export default function ImageMagnifier(
     let zoomW: number = 1
     let zoomH: number = 1
 
-    const previewBoxEl: HTMLElement | null =
+    const previewBoxEl: HTMLElement | HTMLDivElement | null =
         typeof containerElement == 'string' ? document.querySelector(containerElement) : containerElement
 
     if (!previewBoxEl) {
@@ -29,7 +29,7 @@ export default function ImageMagnifier(
         throw new Error('imageOriginalEl is not found')
     }
 
-    const refreshPreviewImage = () => {
+    const refreshImage = () => {
         if (!imageOriginalEl) {
             return
         }
@@ -42,6 +42,8 @@ export default function ImageMagnifier(
     }
 
     const addEvents = () => {
+        imageOriginalEl.addEventListener('load', refreshImage)
+
         previewBoxEl.addEventListener('mouseenter', () => {
             imageEl.style.opacity = '0'
         })
@@ -56,8 +58,7 @@ export default function ImageMagnifier(
         })
     }
 
-    refreshPreviewImage()
     addEvents()
 
-    return refreshPreviewImage
+    return refreshImage
 }

@@ -1,11 +1,8 @@
-# React + TypeScript + Vite
+# Simple Image Magnifier + React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This package allows your customers to zoom in on your product images with ease, giving them a closer look at the details that matter most. Whether it's the intricate stitching on a piece of clothing, the texture of a material, or the fine print on a label, Image Magnifier React makes it all visible with clarity and precision.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![npm version](https://img.shields.io/npm/v/simple-image-magnifier.svg?style=flat)](https://www.npmjs.com/package/simple-image-magnifier "View this project on npm") [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT) [![npm downloads](https://img.shields.io/npm/dm/simple-image-magnifier.svg?style=flat-square)](https://www.npmjs.com/package/simple-image-magnifier)
 
 ## Expanding the ESLint configuration
 
@@ -14,15 +11,13 @@ If you are developing a production application, we recommend updating the config
 - Configure the top-level `parserOptions` property like this:
 
 ```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+<ReactImageMagnifier
+    width={400}
+    height={600}
+    srcPreview={previews[imgActive]}
+    srcOriginal={originals[imgActive]}
+    className='max-w-xs bg-gray-200 rounded-lg md:max-w-none max-h-80 md:max-h-none'
+/>
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`

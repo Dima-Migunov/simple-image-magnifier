@@ -23,9 +23,9 @@
     "ecommerce",
     "product"
   ],
-  "main": "./dist/image-magnifier.js",
-  "module": "./dist/image-magnifier.js",
-  "types": "./dist/image-magnifier.d.ts",
+  "main": "./dist/simple-image-magnifier.js",
+  "module": "./dist/react-image-magnifier.js",
+  "types": "./dist/react-image-magnifier.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -37,6 +37,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
