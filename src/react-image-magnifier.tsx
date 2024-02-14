@@ -3,19 +3,19 @@
 import ImageMagnifier from './simple-image-magnifier'
 import { useEffect, useRef } from 'react'
 
-function ReactImageMagnifier({
-    width = 400,
-    height = 600,
+const ReactImageMagnifier = ({
     srcPreview,
     srcOriginal,
+    width = 400,
+    height = 600,
     className = '',
 }: {
-    width?: number | string
-    height?: number | string
     srcPreview: string
     srcOriginal: string
+    width?: number | string
+    height?: number | string
     className?: string
-}) {
+}) => {
     const container = useRef<HTMLDivElement>(null)
     const imgPreview = useRef<HTMLImageElement>(null)
     const imgOriginal = useRef<HTMLImageElement>(null)
