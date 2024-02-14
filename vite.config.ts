@@ -5,13 +5,15 @@ import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: '/simple-image-magnifier/',
+    mode: 'production',
     build: {
         lib: {
+            name: 'simple-image-magnifier',
             entry: [
                 resolve(__dirname, 'src/react-image-magnifier.tsx'),
                 resolve(__dirname, 'src/simple-image-magnifier.ts'),
             ],
-            name: 'simple-image-magnifier',
             fileName: (format, name) => {
                 return format === 'es' ? `${name}.js` : `${name}.${format}`
             },

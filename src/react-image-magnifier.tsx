@@ -1,3 +1,5 @@
+'use client'
+
 import ImageMagnifier from './simple-image-magnifier'
 import { useEffect, useRef } from 'react'
 

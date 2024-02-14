@@ -8,6 +8,11 @@
     "name": "Dmitri Migunov",
     "email": "dmitri.migunov@gmail.com"
   },
+  "homepage": "https://dima-migunov.github.io/simple-image-magnifier",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dima-Migunov/simple-image-magnifier.git"
+  },
   "description": "Image Magnifier JavaScript (Typescript) | Image Zoom on Hover using | Image Hover Effect",
   "keywords": [
     "react",
@@ -23,16 +28,30 @@
     "ecommerce",
     "product"
   ],
-  "main": "./dist/simple-image-magnifier.js",
-  "module": "./dist/react-image-magnifier.js",
-  "types": "./dist/react-image-magnifier.d.ts",
+  "main": "./dist/simple-image-magnifier.cjs",
+  "module": "./dist/simple-image-magnifier.js",
+  "types": "./dist/simple-image-magnifier.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/simple-image-magnifier.js",
+      "require": "./dist/simple-image-magnifier.cjs"
+    },
+    "./react": {
+      "import": "./dist/react-image-magnifier.js",
+      "require": "./dist/react-image-magnifier.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
