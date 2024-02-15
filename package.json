@@ -1,14 +1,14 @@
 {
   "name": "simple-image-magnifier",
   "private": false,
-  "version": "1.0.4",
+  "version": "1.0.7",
   "type": "module",
   "license": "MIT",
   "author": {
     "name": "Dmitri Migunov",
     "email": "dmitri.migunov@gmail.com"
   },
-  "homepage": "https://dima-migunov.github.io/simple-image-magnifier",
+  "homepage": "https://dima-migunov.github.io/simple-image-magnifier-example/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dima-Migunov/simple-image-magnifier.git"

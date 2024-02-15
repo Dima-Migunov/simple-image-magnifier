@@ -1,7 +1,7 @@
 'use client'
 
 import ImageMagnifier from './simple-image-magnifier'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 interface ReactImageMagnifierProps {
     srcPreview: string
@@ -18,18 +18,18 @@ const ReactImageMagnifier: React.FC<ReactImageMagnifierProps> = ({
     height = 600,
     className = '',
 }) => {
-    const container = React.useRef<HTMLDivElement>(null)
-    const imgPreview = React.useRef<HTMLImageElement>(null)
-    const imgOriginal = React.useRef<HTMLImageElement>(null)
-    const refreshImage = React.useRef<() => void>(() => {})
+    const container = useRef<HTMLDivElement>(null)
+    const imgPreview = useRef<HTMLImageElement>(null)
+    const imgOriginal = useRef<HTMLImageElement>(null)
+    const refreshImage = useRef<() => void>(() => {})
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (container.current && imgPreview.current && imgOriginal.current) {
             refreshImage.current = ImageMagnifier(container.current, imgPreview.current, imgOriginal.current)
         }
     }, [])
 
-    React.useEffect(() => {
+    useEffect(() => {
         refreshImage.current()
     }, [srcOriginal, srcPreview, width, height])
 

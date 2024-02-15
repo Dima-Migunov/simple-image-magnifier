@@ -59,6 +59,7 @@ export default function SimpleImageMagnifier(
     }
 
     addEvents()
+    refreshImage()
 
     return refreshImage
 }

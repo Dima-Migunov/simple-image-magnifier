@@ -18,6 +18,14 @@ export default defineConfig({
                 return format === 'es' ? `${name}.js` : `${name}.${format}`
             },
         },
+        rollupOptions: {
+            external: ['react', 'react-dom'],
+            output: {
+                globals: {
+                    react: 'React',
+                },
+            },
+        },
     },
     plugins: [react(), dts()],
 })
