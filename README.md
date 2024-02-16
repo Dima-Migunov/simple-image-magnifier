@@ -12,9 +12,14 @@ npm i simple-image-magnifier
 
 **For ReactJS**
 ```js
+import ReactImageMagnifier from 'simple-image-magnifier/react'
+import imagePreview from './assets/image-preview.jpg'
+import imageOriginal from './assets/image-original.jpg'
+
+...
 <ReactImageMagnifier
-    srcPreview={previews[imgActive]}
-    srcOriginal={originals[imgActive]}
+    srcPreview={imagePreview}
+    srcOriginal={imageOriginal}
     width={400}
     height={600}
     className='max-w-xs bg-gray-200 rounded-lg md:max-w-none max-h-80 md:max-h-none'
