@@ -21,12 +21,26 @@ const ReactImageMagnifier: React.FC<ReactImageMagnifierProps> = ({
     const container = useRef<HTMLDivElement>(null)
     const imgPreview = useRef<HTMLImageElement>(null)
     const imgOriginal = useRef<HTMLImageElement>(null)
-    const refreshImage = useRef<() => void>(() => {})
+    const refreshImage = useRef<() => void>(() => { })
+
+    const showImageMagnifier = async () => {
+        if (container.current && imgPreview.current && imgOriginal.current) {
+            imgOriginal.current.onload = () => {
+                refreshImage.current = ImageMagnifier(
+                    container.current as HTMLDivElement,
+                    imgPreview.current as HTMLImageElement,
+                    imgOriginal.current as HTMLImageElement
+                )
+            }
+
+            return
+        }
+
+        setTimeout(showImageMagnifier, 200);
+    }
 
     useEffect(() => {
-        if (container.current && imgPreview.current && imgOriginal.current) {
-            refreshImage.current = ImageMagnifier(container.current, imgPreview.current, imgOriginal.current)
-        }
+        showImageMagnifier()
     }, [])
 
     useEffect(() => {
