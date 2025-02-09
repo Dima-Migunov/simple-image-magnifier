@@ -11,6 +11,7 @@ npm i simple-image-magnifier
 ```
 
 **For ReactJS**
+
 ```js
 import ReactImageMagnifier from 'simple-image-magnifier/react'
 import imagePreview from './assets/image-preview.jpg'
@@ -23,13 +24,17 @@ import imageOriginal from './assets/image-original.jpg'
     width={400}
     height={600}
     className='max-w-xs bg-gray-200 rounded-lg md:max-w-none max-h-80 md:max-h-none'
+    objectFit='contain'
 />
 ```
+
 - `srcPreview` and `srcOriginal` is required fields
 - `width` and `height` is optionally, by default `100%`
 - `className` is optionally
+- `objectFit` is optionally, by default ``cover`
 
 **For HTML+JS**
+
 ```js
 ...
 <body>
@@ -39,10 +44,10 @@ import imageOriginal from './assets/image-original.jpg'
             <img src="./image-original-1.jpg" class="product-image-original" alt='' />
         </div>
     </div>
-    
+
     <script type="module">
         import ImageMagnifier from "./simple-image-magnifier.js"
-        
+
         const refreshImage = ImageMagnifier(
             '.product-wrapper',
             '.product-image-preview',
@@ -52,6 +57,7 @@ import imageOriginal from './assets/image-original.jpg'
 </body>
 ...
 ```
+
 - the first parameter is `sellector` as string or Element of the wrapper div for the images.
 - the second parameter same as the first parameter but for the preview image.
 - same but for the original image.
