@@ -81,7 +81,7 @@ const ReactImageMagnifier: React.FC<ReactImageMagnifierProps> = ({
         ref={imgOriginal}
         src={srcOriginal}
         alt=""
-        style={{ position: "absolute", maxWidth: "none" }}
+        style={{ position: "absolute", maxWidth: "none", opacity: 0 }}
       />
     </div>
   )

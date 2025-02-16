@@ -50,23 +50,17 @@ export default function SimpleImageMagnifier(
 
     previewBoxEl.addEventListener("mouseenter", () => {
       imageEl.style.opacity = "0"
+      imageOriginalEl.style.opacity = "1"
     })
 
     previewBoxEl.addEventListener("mouseleave", () => {
       imageEl.style.opacity = "1"
+      imageOriginalEl.style.opacity = "0"
     })
 
     previewBoxEl.addEventListener("mousemove", (e) => {
       imageOriginalEl.style.top = -e.offsetY * zoomH + "px"
       imageOriginalEl.style.left = -e.offsetX * zoomW + "px"
-    })
-
-    imageEl.addEventListener("mouseenter", () => {
-      previewBoxEl.style.opacity = "0"
-    })
-
-    imageEl.addEventListener("mouseleave", () => {
-      previewBoxEl.style.opacity = "1"
     })
   }
 
